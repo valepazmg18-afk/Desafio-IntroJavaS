@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+</head>
+<body>
+    <section>
+        <div class="card">
+            <div class="img-card"></div>
+            <h6>Laptop Gamer AMD</h6>
+            <p>"Precio base: 
+                <span class="precio-inicial">$400000"</span>
+            </p>
+            <p>
+                "Cantidad"
+                <span class="cantidad">0</span>
+                <button id="sumar">+</button>
+                <button id="restar">-</button>
+            </p>
+        </div>
+    </section>
+    <div class="total-section">
+        <p id="total">"Total a pagar: $"
+            <span class="valor-total"></span>
+        </p>
+    </div>
+
+<script>
+    let precio = 400000;
+    let cantidad = 0;
+
+  let precioSpan = document.querySelector(".precio-inicial"); 
+  let cantidadSpan = document.querySelector(".cantidad");
+  let totalSpan = document.querySelector(".valor-total");
+  let botonSumar = document.querySelector("#sumar");
+  let botonRestar = document.querySelector("#restar");  
+
+  precioSpan.innerHTML = precio;
+
+  botonSumar.onclick = function()   {
+    let cuenta = Number(cantidadSpan.textContent);
+    let suma = cuenta + 1;
+    cantidadSpan.textContent = suma;
+    let total = precio * suma;
+    totalSpan.textContent = total;
+  }
+
+  botonRestar.onclick = function()  {
+    let cuenta = Number(cantidadSpan.textContent);
+    let resta = cuenta - 1;
+    cantidadSpan.textContent = resta;
+    let total = precio * resta;
+    totalSpan.textContent = total;
+  }
+</script>
+
+</body>
+</html>
